@@ -37,7 +37,7 @@ function ModelCard(props) {
         Delete
       </Button>
       <ConfirmDeleteDialog
-        onOpen={showConfirmDeleteDialog}
+        open={showConfirmDeleteDialog}
         onClose={hideConfirmDeleteDialogHandler}
         onDelete={deleteHandler}
         text={dialogText}
