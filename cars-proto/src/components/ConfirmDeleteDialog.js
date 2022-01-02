@@ -7,25 +7,15 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 
 function ConfirmDeleteDialog(props) {
-  const [open, setOpen] = useState(false);
-
-  const openDialog = () => {
-    setOpen(true);
-  };
-
-  const closeDialog = () => {
-    setOpen(false);
-  };
-
   return (
-    <Dialog open={props.open} onClose={closeDialog}>
+    <Dialog open={props.onOpen} onClose={props.onClose}>
       <DialogTitle>Confirm Delete</DialogTitle>
       <DialogContent>
         <DialogContentText>{props.text}</DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={closeDialog}>Cancel</Button>
-        <Button onClick={closeDialog}>Delete</Button>
+        <Button onClick={props.onClose}>Cancel</Button>
+        <Button onClick={props.onDelete}>Delete</Button>
       </DialogActions>
     </Dialog>
   );

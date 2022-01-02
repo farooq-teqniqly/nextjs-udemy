@@ -13,9 +13,16 @@ function ModelCard(props) {
     setShowConfirmDeleteDialog(true);
   };
 
-  const hideConfirnDeleteDialogHandler = () => {
+  const hideConfirmDeleteDialogHandler = () => {
     setShowConfirmDeleteDialog(false);
   };
+
+  const deleteHandler = () => {
+    console.log(`Deleted ${props.modelName}.`);
+    hideConfirmDeleteDialogHandler();
+  };
+
+  const dialogText = `Delete ${props.modelName}?`;
 
   return (
     <Card variant="outlined">
@@ -30,8 +37,10 @@ function ModelCard(props) {
         Delete
       </Button>
       <ConfirmDeleteDialog
-        open={showConfirmDeleteDialog}
-        text="Are you sure you want to delete this model?"
+        onOpen={showConfirmDeleteDialog}
+        onClose={hideConfirmDeleteDialogHandler}
+        onDelete={deleteHandler}
+        text={dialogText}
       ></ConfirmDeleteDialog>
     </Card>
   );
