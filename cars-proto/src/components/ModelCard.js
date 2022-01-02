@@ -30,6 +30,7 @@ function ModelCard(props) {
         <Typography variant="h2">{props.modelName}</Typography>
       </CardContent>
       <Button
+        color="error"
         variant="outlined"
         startIcon={<DeleteIcon />}
         onClick={showConfirmDeleteDialogHandler}

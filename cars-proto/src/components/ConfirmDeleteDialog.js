@@ -14,7 +14,9 @@ function ConfirmDeleteDialog(props) {
       </DialogContent>
       <DialogActions>
         <Button onClick={props.onClose}>Cancel</Button>
-        <Button onClick={props.onDelete}>Delete</Button>
+        <Button color="error" onClick={props.onDelete}>
+          Delete
+        </Button>
       </DialogActions>
     </Dialog>
   );
