@@ -26,7 +26,7 @@ function ModelCard(props) {
 
   return (
     <Card variant="outlined">
-      <CardContent>
+      <CardContent sx={{ flexGrow: 1 }}>
         <Typography variant="h2">{props.modelName}</Typography>
       </CardContent>
       <Button
